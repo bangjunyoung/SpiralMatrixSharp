@@ -23,57 +23,54 @@
 // THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-namespace SpiralMatrixSharp.Test
+module SpiralMatrixSharp.SpiralMatrixTest
 
 open NUnit.Framework
-open SpiralMatrixSharp
 
-module SpiralMatrixTest =
-
-    [<Test>]
-    let ``generate should work as expected`` () =
-        let actual=
-            [|20 .. -1 .. 1|]
-            |> SpiralMatrix.generate Counterclockwise TopRight 5 4
-        let expected =
-            array2D [|
-                 [|17; 18; 19; 20|]
-                 [|16;  5;  6;  7|]
-                 [|15;  4;  1;  8|]
-                 [|14;  3;  2;  9|]
-                 [|13; 12; 11; 10|]
-            |]
-
-        Assert.That(actual, Is.EqualTo expected)
-
-    [<Test>]
-    let ``traverse should work as expected`` () =
-        let actual =
-            array2D [|
+[<Test>]
+let ``generate should work as expected`` () =
+    let actual=
+        [|20 .. -1 .. 1|]
+        |> SpiralMatrix.generate Counterclockwise TopRight 5 4
+    let expected =
+        array2D [|
                 [|17; 18; 19; 20|]
                 [|16;  5;  6;  7|]
                 [|15;  4;  1;  8|]
                 [|14;  3;  2;  9|]
                 [|13; 12; 11; 10|]
-            |]
-            |> SpiralMatrix.traverse Counterclockwise TopRight
-        let expected = [|20 .. -1 .. 1|]
+        |]
 
-        Assert.That(actual, Is.EqualTo expected)
+    Assert.That(actual, Is.EqualTo expected)
 
-    let testParameters =
-        ([Clockwise; Counterclockwise],
-         [TopLeft; TopRight; BottomRight; BottomLeft])
-        ||> List.allPairs
-        |> List.map TestCaseData
+[<Test>]
+let ``traverse should work as expected`` () =
+    let actual =
+        array2D [|
+            [|17; 18; 19; 20|]
+            [|16;  5;  6;  7|]
+            [|15;  4;  1;  8|]
+            [|14;  3;  2;  9|]
+            [|13; 12; 11; 10|]
+        |]
+        |> SpiralMatrix.traverse Counterclockwise TopRight
+    let expected = [|20 .. -1 .. 1|]
 
-    [<TestCaseSource("testParameters")>]
-    let ``generate and traverse are inverse operations`` direction initialPosition =
-        let nrows, ncols = 4, 3
-        let original = [|1 .. nrows * ncols|]
-        let roundtripped =
-            original
-            |> SpiralMatrix.generate direction initialPosition nrows ncols
-            |> SpiralMatrix.traverse direction initialPosition
+    Assert.That(actual, Is.EqualTo expected)
 
-        Assert.That(roundtripped, Is.EquivalentTo original)
+let testParameters =
+    ([Clockwise; Counterclockwise],
+        [TopLeft; TopRight; BottomRight; BottomLeft])
+    ||> List.allPairs
+    |> List.map TestCaseData
+
+[<TestCaseSource("testParameters")>]
+let ``generate and traverse are inverse operations`` direction initialPosition =
+    let nrows, ncols = 4, 3
+    let original = [|1 .. nrows * ncols|]
+    let roundtripped =
+        original
+        |> SpiralMatrix.generate direction initialPosition nrows ncols
+        |> SpiralMatrix.traverse direction initialPosition
+
+    Assert.That(roundtripped, Is.EquivalentTo original)
