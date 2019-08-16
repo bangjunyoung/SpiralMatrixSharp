@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "SpiralMatrixSharpTests", "test\SpiralMatrixSharpTests\SpiralMatrixSharpTests.fsproj", "{277740E5-589B-419C-AA40-24672390BC62}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "SpiralMatrixSharpTest", "test\SpiralMatrixSharpTest\SpiralMatrixSharpTest.fsproj", "{277740E5-589B-419C-AA40-24672390BC62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

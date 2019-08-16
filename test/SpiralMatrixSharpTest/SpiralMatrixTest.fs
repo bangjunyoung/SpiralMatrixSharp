@@ -23,12 +23,12 @@
 // THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-namespace SpiralMatrixSharp.Tests
+namespace SpiralMatrixSharp.Test
 
 open NUnit.Framework
 open SpiralMatrixSharp
 
-module SpiralMatrixTests =
+module SpiralMatrixTest =
 
     [<Test>]
     let ``generate should work as expected`` () =
