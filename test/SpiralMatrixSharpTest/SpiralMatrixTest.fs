@@ -60,7 +60,7 @@ let ``traverse should work as expected`` () =
 
 let testParameters =
     ([Clockwise; Counterclockwise],
-        [TopLeft; TopRight; BottomRight; BottomLeft])
+     [TopLeft; TopRight; BottomRight; BottomLeft])
     ||> List.allPairs
     |> List.map TestCaseData
 
