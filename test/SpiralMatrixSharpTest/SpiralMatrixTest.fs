@@ -34,11 +34,11 @@ let ``generate should work as expected`` () =
         |> SpiralMatrix.generate Counterclockwise TopRight 5 4
     let expected =
         array2D [|
-                [|17; 18; 19; 20|]
-                [|16;  5;  6;  7|]
-                [|15;  4;  1;  8|]
-                [|14;  3;  2;  9|]
-                [|13; 12; 11; 10|]
+            [|17; 18; 19; 20|]
+            [|16;  5;  6;  7|]
+            [|15;  4;  1;  8|]
+            [|14;  3;  2;  9|]
+            [|13; 12; 11; 10|]
         |]
 
     Assert.That(actual, Is.EqualTo expected)
