@@ -35,3 +35,9 @@ let ``Pairwise cyclic empty list returns it as is`` () =
     let expected = List.empty
     Assert.That(actual, Is.EqualTo expected)
     
+[<Test>]
+let ``Pairwise cyclic list with one element`` () =
+    let actual = List.pairwiseCyclic ['a']
+    let expected = [('a', 'a')]
+    Assert.That(actual, Is.EqualTo expected)
+    
