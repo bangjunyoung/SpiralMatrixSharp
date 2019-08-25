@@ -40,4 +40,10 @@ let ``Pairwise cyclic list with one element`` () =
     let actual = List.pairwiseCyclic ['a']
     let expected = [('a', 'a')]
     Assert.That(actual, Is.EqualTo expected)
-    
+
+[<Test>]
+let ``Pairwise cyclic list with multiple elements`` () =
+    let actual = List.pairwiseCyclic ['a'; 'b'; 'c'; 'c']
+    let expected = [('a', 'b'); ('b', 'c'); ('c', 'c'); ('c', 'a')]
+    Assert.That(actual, Is.EqualTo expected)
+        
