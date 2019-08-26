@@ -31,14 +31,6 @@ module Array2D =
         |> Seq.cast<'T>
         |> Seq.toArray
 
-    let ofArray nrows ncols source =
-        if Array.length source <> nrows * ncols then
-            invalidArg "source" "must have a length of nrows multiplied by ncols"
-
-        source
-        |> Array.chunkBySize ncols
-        |> array2D
-
 module List =
     let pairwiseCyclic source =
         let head = List.head source
