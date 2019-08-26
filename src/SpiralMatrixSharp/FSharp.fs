@@ -33,14 +33,16 @@ module Array2D =
 
 module List =
     let pairwiseCyclic source =
-        let head = List.head source
-        let rec loop source' =
-            match source' with
-            | [] -> []
-            | [x] -> [x, head]
-            | x :: y :: rest -> (x, y) :: loop (y :: rest)
+        match source with
+        | [] -> []
+        | head :: _ ->
+            let rec loop source' =
+                match source' with
+                | [] -> []
+                | [x] -> [x, head]
+                | x :: y :: rest -> (x, y) :: loop (y :: rest)
 
-        loop source
+            loop source
 
 type CycleNode<'T> internal (item: 'T) as this =
     let mutable next = this
