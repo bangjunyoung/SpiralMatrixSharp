@@ -33,13 +33,11 @@ module Array2D =
 
     let ofArray nrows ncols source =
         if Array.length source <> nrows * ncols then
-            invalidArg "source" "must be a rectangular array"
+            invalidArg "source" "must have a length of nrows multiplied by ncols"
 
-        let array2D = Array2D.zeroCreate nrows ncols
         source
-        |> Array.iteri (fun i elem -> array2D.[i / nrows, i % ncols] <- elem)
-
-        array2D
+        |> Array.chunkBySize ncols
+        |> array2D
 
 module List =
     let pairwiseCyclic source =
