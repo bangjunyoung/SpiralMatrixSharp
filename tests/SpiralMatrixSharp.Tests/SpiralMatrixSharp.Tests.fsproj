@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="SpiralMatrixTest.fs" />
+    <Compile Include="SpiralMatrixTests.fs" />
   </ItemGroup>
 
   <ItemGroup>

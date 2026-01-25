@@ -23,7 +23,7 @@
 // THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-module SpiralMatrixSharp.SpiralMatrixTest
+module SpiralMatrixSharp.SpiralMatrixTests
 
 open NUnit.Framework
 

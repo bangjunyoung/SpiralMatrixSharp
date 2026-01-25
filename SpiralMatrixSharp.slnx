@@ -3,5 +3,5 @@
     <File Path="README.md" />
   </Folder>
   <Project Path="src/SpiralMatrixSharp/SpiralMatrixSharp.fsproj" />
-  <Project Path="test/SpiralMatrixSharpTest/SpiralMatrixSharpTest.fsproj" />
+  <Project Path="tests/SpiralMatrixSharp.Tests/SpiralMatrixSharp.Tests.fsproj" />
 </Solution>
