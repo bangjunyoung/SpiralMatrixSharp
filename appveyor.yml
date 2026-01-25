@@ -1,5 +1,15 @@
 image: Visual Studio 2022
 
+install:
+  - ps: |
+      $currentVersion = dotnet --version
+      if ($currentVersion -notlike "10.*") {
+        Write-Host "Installing .NET 10 SDK..."
+        Invoke-WebRequest -Uri "https://dot.net/v1/dotnet-install.ps1" -OutFile "dotnet-install.ps1"
+        ./dotnet-install.ps1 -Channel 10.0 -InstallDir "$env:ProgramFiles\dotnet"
+      }
+      dotnet --version
+
 build: off
 
 build_script:
