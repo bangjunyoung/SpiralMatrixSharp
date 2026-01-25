@@ -1,6 +1,7 @@
 # SpiralMatrixSharp
 
-[![Build status](https://ci.appveyor.com/api/projects/status/lsg9edneqh3nfpit/branch/master?svg=true)](https://ci.appveyor.com/project/bangjunyoung/spiralmatrixsharp/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/github/bangjunyoung/SpiralMatrixSharp?branch=master&svg=true)]
+(https://ci.appveyor.com/project/bangjunyoung/spiralmatrixsharp)
 
 Arguably the world's most advanced spiral matrix generator written in F#.
 
