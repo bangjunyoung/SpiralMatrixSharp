@@ -64,8 +64,8 @@ let testParameters =
     ||> List.allPairs
     |> List.map TestCaseData
 
-[<TestCaseSource("testParameters")>]
-let ``generate and traverse are inverse operations`` direction initialPosition =
+[<TestCaseSource(nameof testParameters)>]
+let ``generate and traverse are inverse operations of each other`` direction initialPosition =
     let nrows, ncols = 4, 3
     let original = [|1 .. nrows * ncols|]
     let roundtripped =
