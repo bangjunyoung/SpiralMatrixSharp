@@ -54,7 +54,7 @@ val it : char [] =
   [|'f'; 'e'; 'd'; 'c'; 'b'; 'a'; 'j'; 'i'; 'h'; 'g'; 'l'; 'k'|]
 ```
 
-### Interoperability with C#
+## Interoperability with C#
 
 `generate` and `traverse` functions are designed to be easily used from C#.
 Note that, unlike in F#, you must explicitly specify the `Direction` and `InitialPosition` enum types as shown in the example below:
