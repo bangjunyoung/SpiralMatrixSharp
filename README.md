@@ -57,7 +57,8 @@ val it : char [] =
 ## Interoperability with C#
 
 `generate` and `traverse` functions are designed to be easily used from C#.
-Note that, unlike in F#, you must explicitly specify the `Direction` and `InitialPosition` enum types as shown in the example below:
+Note that, unlike in F#, you must use PascalCase names for `Generate` and `Traverse`, and explicitly
+specify the `Direction` and `InitialPosition` enum types as shown in the example below:
 
 ```csharp
 using System;
