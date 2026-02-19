@@ -25,7 +25,7 @@
 
 namespace SpiralMatrixSharp
 
-open SpiralMatrixSharp.FSharp
+open FSharpCoreMissingParts
 
 type Direction = Clockwise | Counterclockwise
 type InitialPosition = TopLeft | TopRight | BottomLeft | BottomRight
@@ -43,15 +43,15 @@ module SpiralMatrix =
                         points, acc
 
                 let mover', point' =
-                    let nextPoint = point |> Cycle.value mover
+                    let nextPoint = point |> CircularList.value mover
                     if points |> Set.contains nextPoint then
                         mover, nextPoint
                     else
-                        Cycle.next mover, point
+                        CircularList.next mover, point
 
-                loop mover' point' points' acc' 
+                loop mover' point' points' acc'
 
-        loop (Cycle.ofList movers) initialPoint (Set.ofList points) []
+        loop (CircularList.ofList movers) initialPoint (Set.ofList points) []
 
     [<CompiledName("Generate")>]
     let generate direction initialPosition nrows ncolumns source =

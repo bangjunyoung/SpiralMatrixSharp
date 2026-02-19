@@ -3,7 +3,9 @@
     <TargetFramework>net10.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="FSharp.fs" />
     <Compile Include="SpiralMatrix.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FSharpCoreMissingParts" Version="1.0.0" />
   </ItemGroup>
 </Project>
