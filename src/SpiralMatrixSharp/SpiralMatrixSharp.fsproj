@@ -6,6 +6,6 @@
     <Compile Include="SpiralMatrix.fs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="FSharpCoreMissingParts" Version="1.0.0" />
+    <PackageReference Include="FSharpCoreMissingParts" Version="1.0.1" />
   </ItemGroup>
 </Project>
